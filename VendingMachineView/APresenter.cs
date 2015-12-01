@@ -44,5 +44,10 @@ namespace VendingMachineView
                 this._msgPresenter.ShowMessage("Возникла неизвестная ошибка");
             }
         }
+
+        protected void ShowMessage(string msg)
+        {
+            this._msgPresenter.ShowMessage(msg);
+        }
     }
 }

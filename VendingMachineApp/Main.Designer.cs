@@ -19,9 +19,10 @@
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this._viewOperation = new VendingMachineView.OperationVIew();
+            this._operationView = new VendingMachineView.OperationVIew();
             this._userWalletView = new VendingMachineView.WalletView();
             this._machineWalletView = new VendingMachineView.WalletView();
+            this._cookView = new VendingMachineView.CookView();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -30,7 +31,7 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this._viewOperation);
+            this.groupBox1.Controls.Add(this._operationView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox1.Location = new System.Drawing.Point(283, 3);
             this.groupBox1.Name = "groupBox1";
@@ -47,6 +48,7 @@
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this._cookView, 0, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
@@ -80,12 +82,12 @@
             // 
             // _viewOperation
             // 
-            this._viewOperation.AutoSize = true;
-            this._viewOperation.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._viewOperation.Location = new System.Drawing.Point(3, 16);
-            this._viewOperation.Name = "_viewOperation";
-            this._viewOperation.Size = new System.Drawing.Size(268, 224);
-            this._viewOperation.TabIndex = 0;
+            this._operationView.AutoSize = true;
+            this._operationView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._operationView.Location = new System.Drawing.Point(3, 16);
+            this._operationView.Name = "_viewOperation";
+            this._operationView.Size = new System.Drawing.Size(268, 224);
+            this._operationView.TabIndex = 0;
             // 
             // _userWalletView
             // 
@@ -102,6 +104,14 @@
             this._machineWalletView.Name = "_machineWalletView";
             this._machineWalletView.Size = new System.Drawing.Size(268, 224);
             this._machineWalletView.TabIndex = 0;
+            // 
+            // cookView1
+            // 
+            this._cookView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._cookView.Location = new System.Drawing.Point(3, 3);
+            this._cookView.Name = "cookView1";
+            this._cookView.Size = new System.Drawing.Size(274, 243);
+            this._cookView.TabIndex = 4;
             // 
             // Main
             // 
@@ -123,13 +133,14 @@
 
         #endregion
 
-        private VendingMachineView.OperationVIew _viewOperation;
+        private VendingMachineView.OperationVIew _operationView;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.GroupBox groupBox3;
         private VendingMachineView.WalletView _userWalletView;
         private VendingMachineView.WalletView _machineWalletView;
+        private VendingMachineView.CookView _cookView;
     }
 }
 

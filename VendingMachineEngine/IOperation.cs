@@ -15,5 +15,7 @@ namespace VendingMachineEngine
         void Deposit(uint nominal, uint count);
 
         void MoneyBack();
+
+        void Buy(object drinkId);
     }
 }

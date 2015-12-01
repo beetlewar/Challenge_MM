@@ -12,6 +12,11 @@ namespace VendingMachineEngine
     public interface ICook
     {
         /// <summary>
+        /// Возвращает список напитков
+        /// </summary>
+        IDrink[] Drinks { get; }
+
+        /// <summary>
         /// Готовит напиток с указанным Id
         /// </summary>
         /// <param name="id">Id приготавливаемого напитка</param>

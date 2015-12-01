@@ -8,8 +8,23 @@ namespace VendingMachineEngine
 {
     public interface IWallet
     {
+        /// <summary>
+        /// Возвращает стопки монет
+        /// </summary>
         CoinsPile[] Piles { get; }
+
+        /// <summary>
+        /// Добавляет монеты в определенную стопку
+        /// </summary>
+        /// <param name="nominal">Номинал добавляемых монет</param>
+        /// <param name="count">Количество добавляемых монет</param>
         void AddCoins(uint nominal, uint count);
+
+        /// <summary>
+        /// Забирает монеты из определенной стопки
+        /// </summary>
+        /// <param name="nominal">Номинал забираемых монет</param>
+        /// <param name="count">Количество забираемых монет</param>
         void SubstructCoins(uint nominal, uint count);
 
         /// <summary>

@@ -9,7 +9,8 @@ namespace VendingMachineEngine
     /// <summary>
     /// Управляет переводом денег с одного кошелька на другой, выполняя операции по вносу денег, сдаче и приготовлению напитка
     /// </summary>
-    public class Operation : IOperation
+    public class Operation : 
+        IOperation
     {
         private uint _balance;
 
@@ -53,7 +54,10 @@ namespace VendingMachineEngine
             }
         }
 
-        public Operation(IWallet userWallet, IWallet machineWallet, ICook cook)
+        public Operation(
+            IWallet userWallet, 
+            IWallet machineWallet, 
+            ICook cook)
         {
             if(userWallet == null)
             {

@@ -55,6 +55,21 @@
     <Compile Include="CoinsPileInfoView.Designer.cs">
       <DependentUpon>CoinsPileInfoView.cs</DependentUpon>
     </Compile>
+    <Compile Include="CookPresenter.cs" />
+    <Compile Include="CookView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CookView.Designer.cs">
+      <DependentUpon>CookView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DrinkIdEventArgs.cs" />
+    <Compile Include="DrinkView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="DrinkView.Designer.cs">
+      <DependentUpon>DrinkView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ICookView.cs" />
     <Compile Include="IMessagePresenter.cs" />
     <Compile Include="IOperationView.cs" />
     <Compile Include="MessageBoxPresenter.cs" />
@@ -85,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CoinsPileInfoView.resx">
       <DependentUpon>CoinsPileInfoView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CookView.resx">
+      <DependentUpon>CookView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DrinkView.resx">
+      <DependentUpon>DrinkView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperationVIew.resx">
       <DependentUpon>OperationVIew.cs</DependentUpon>

@@ -11,10 +11,29 @@ namespace VendingMachineEngine
     /// </summary>
     public class Drink : IDrink
     {
+        public event EventHandler CountChanged;
+
+        private uint _count;
+
         /// <summary>
         /// Количество порций
         /// </summary>
-        public uint Count { get; private set; }
+        public uint Count
+        {
+            get { return this._count; }
+            private set
+            {
+                if (this._count != value)
+                {
+                    this._count = value;
+                    var h = this.CountChanged;
+                    if (h != null)
+                    {
+                        h(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
 
         /// <summary>
         /// Стоимость напитка
@@ -38,7 +57,7 @@ namespace VendingMachineEngine
 
         public void Make()
         {
-            if(this.Count == 0)
+            if (this.Count == 0)
             {
                 throw new EngineOperationException("Напиток закончился");
             }

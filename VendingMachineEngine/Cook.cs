@@ -13,6 +13,11 @@ namespace VendingMachineEngine
     {
         private readonly Dictionary<object, IDrink> _drinks;
 
+        public IDrink[] Drinks
+        {
+            get { return this._drinks.Values.ToArray(); }
+        }
+
         public Cook(IEnumerable<IDrink> drinks)
         {
             this._drinks = drinks.ToDictionary(d => d.Id);

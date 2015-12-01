@@ -48,16 +48,20 @@ namespace VendingMachineApp
                 new Drink(15, 35, "Сок"),
             };
 
-            var operation = new Operation(new Wallet(userCoinPiles), new Wallet(machineCoinPiles), new Cook(drinks));
+            var cook = new Cook(drinks);
+
+            var operation = new Operation(new Wallet(userCoinPiles), new Wallet(machineCoinPiles), cook);
 
             // инициализируем вьюхи
-            this._viewOperation.Setup(userCoinPiles);
+            this._operationView.Setup(userCoinPiles);
             this._userWalletView.Setup(userCoinPiles);
             this._machineWalletView.Setup(machineCoinPiles);
+            this._cookView.Setup(cook);
 
             // инициализируем презентеры
             var msgPresenter = new MessageBoxPresenter();
-            this._objectsToDispose.Add(new OperationPresenter(operation, this._viewOperation, msgPresenter));
+            this._objectsToDispose.Add(new OperationPresenter(operation, this._operationView, msgPresenter));
+            this._objectsToDispose.Add(new CookPresenter(operation, this._cookView, msgPresenter));
         }
 
         /// <summary>

@@ -11,6 +11,8 @@ namespace VendingMachineEngine
     /// </summary>
     public interface IDrink
     {
+        event EventHandler CountChanged;
+
         /// <summary>
         /// Возвращает количество оставшихся порций
         /// </summary>
