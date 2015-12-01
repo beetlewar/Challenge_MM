@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendingMachineEngine;
+using VendingMachinePresentation;
 using VendingMachineView;
 
 namespace VendingMachineApp
@@ -60,7 +61,7 @@ namespace VendingMachineApp
 
             // инициализируем презентеры
             this._objectsToDispose.Add(new OperationPresenter(operation, this._operationView));
-            this._objectsToDispose.Add(new CookPresenter(operation, this._cookView));
+            this._objectsToDispose.Add(new CookPresenter(operation, this._cookView, MessageBoxPresenter.Instance));
         }
 
         /// <summary>

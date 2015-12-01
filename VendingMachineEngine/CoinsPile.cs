@@ -72,7 +72,7 @@ namespace VendingMachineEngine
         {
             if(count > this.Count)
             {
-                throw new EngineOperationException("Недостаточно монет");
+                throw new EngineOperationException("Монет этого номинала больше не осталось");
             }
             this.Count -= count;
         }

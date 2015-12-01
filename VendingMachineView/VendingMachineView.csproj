@@ -54,7 +54,7 @@
     <Compile Include="CoinsPileInfoView.Designer.cs">
       <DependentUpon>CoinsPileInfoView.cs</DependentUpon>
     </Compile>
-    <Compile Include="CookPresenter.cs" />
+    <Compile Include="CoinsPileViewItem.cs" />
     <Compile Include="CookView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -62,6 +62,7 @@
       <DependentUpon>CookView.cs</DependentUpon>
     </Compile>
     <Compile Include="DrinkIdEventArgs.cs" />
+    <Compile Include="DrinkViewItem.cs" />
     <Compile Include="DrinkView.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -70,8 +71,6 @@
     </Compile>
     <Compile Include="ICookView.cs" />
     <Compile Include="IOperationView.cs" />
-    <Compile Include="MessageBoxPresenter.cs" />
-    <Compile Include="OperationPresenter.cs" />
     <Compile Include="OperationVIew.cs">
       <SubType>UserControl</SubType>
     </Compile>

@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Rhino.Mocks;
 using VendingMachineEngine;
+using VendingMachineView;
 
-namespace VendingMachineView.Tests
+namespace VendingMachinePresentation.Tests
 {
     [TestFixture]
     public class OperationPresenterTests

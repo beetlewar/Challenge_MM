@@ -63,7 +63,7 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Остаток";
+            this.label1.Text = "Количество порций";
             // 
             // label2
             // 

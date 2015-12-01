@@ -18,15 +18,17 @@ namespace VendingMachineView
     {
         public event EventHandler<CoinsPileEventArgs> PileClicked;
 
+        private CoinsPileViewItem _pile;
+
         public CoinsPileButtonView()
         {
             InitializeComponent();
         }
 
-        public void Setup(CoinsPile pile)
+        public void Setup(CoinsPileViewItem pile)
         {
-            this._button.Tag = pile;
-            this._button.Text = pile.Nominal.ToString();
+            this._pile = pile;
+            this._button.Text = this._pile.NominalStr;
         }
 
         private void _button_Click(object sender, EventArgs e)
@@ -34,7 +36,7 @@ namespace VendingMachineView
             var h = this.PileClicked;
             if( h != null )
             {
-                h(this, new CoinsPileEventArgs((CoinsPile)this._button.Tag));
+                h(this, new CoinsPileEventArgs(this._pile.Source));
             }
         }
     }

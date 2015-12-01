@@ -4,8 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using VendingMachineEngine;
+using VendingMachineView;
 
-namespace VendingMachineView
+namespace VendingMachinePresentation
 {
     public class OperationPresenter : 
         IDisposable

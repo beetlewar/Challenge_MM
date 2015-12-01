@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 using NUnit.Framework;
 using Rhino.Mocks;
 using VendingMachineEngine;
+using VendingMachineView;
 
-namespace VendingMachineView.Tests
+namespace VendingMachinePresentation.Tests
 {
     [TestFixture]
     public class CookPresenterTests
@@ -15,13 +16,13 @@ namespace VendingMachineView.Tests
         [Test]
         public void Ctor_NullOperation_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new CookPresenter(null, MockRepository.GenerateStub<ICookView>()));
+            Assert.Throws<ArgumentNullException>(() => new CookPresenter(null, MockRepository.GenerateStub<ICookView>(), MockRepository.GenerateStub<IMessagePresenter>()));
         }
 
         [Test]
         public void Ctor_NullCookView_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new CookPresenter(MockRepository.GenerateStub<IOperation>(), null));
+            Assert.Throws<ArgumentNullException>(() => new CookPresenter(MockRepository.GenerateStub<IOperation>(), null, MockRepository.GenerateStub<IMessagePresenter>()));
         }
 
         [Test]
@@ -32,7 +33,7 @@ namespace VendingMachineView.Tests
 
             var stub = MockRepository.GenerateStub<ICookView>();
 
-            new CookPresenter(mock, stub);
+            new CookPresenter(mock, stub, MockRepository.GenerateStub<IMessagePresenter>());
 
             stub.Raise(
                 s => s.BuyDrinkClicked += null,

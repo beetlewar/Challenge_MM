@@ -28,7 +28,7 @@ namespace VendingMachineView
             {
                 var drinkView = new DrinkView();
                 this._panel.Controls.Add(drinkView);
-                drinkView.Setup(drink);
+                drinkView.Setup(new DrinkViewItem(drink));
 
                 drinkView.BuyClicked += drinkView_BuyClicked;
             }

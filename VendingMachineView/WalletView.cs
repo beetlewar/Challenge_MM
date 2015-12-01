@@ -20,10 +20,10 @@ namespace VendingMachineView
 
         public void Setup(IEnumerable<CoinsPile> piles)
         {
-            foreach(var pile in piles)
+            foreach (var pile in piles)
             {
                 var view = new CoinsPileInfoView();
-                view.Setup(pile);
+                view.Setup(new CoinsPileViewItem(pile));
                 this._panel.Controls.Add(view);
             }
         }

@@ -25,7 +25,7 @@ namespace VendingMachineView
             foreach(var pile in userPiles)
             {
                 var view = new CoinsPileButtonView();
-                view.Setup(pile);
+                view.Setup(new CoinsPileViewItem(pile));
                 view.PileClicked += this.FirePileClicked;
                 this._panel.Controls.Add(view);
             }

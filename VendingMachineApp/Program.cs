@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using VendingMachineEngine;
+using VendingMachinePresentation;
 
 namespace VendingMachineApp
 {
@@ -23,11 +24,11 @@ namespace VendingMachineApp
                 {
                     if(ea.Exception is EngineOperationException)
                     {
-                        MessageBox.Show(ea.Exception.Message);
+                        MessageBoxPresenter.Instance.ShowError(ea.Exception.Message);
                     }
                     else
                     {
-                        MessageBox.Show("Возникла неизвестная ошибка");
+                        MessageBoxPresenter.Instance.ShowError("Возникла неизвестная ошибка");
                     }
                 };
 

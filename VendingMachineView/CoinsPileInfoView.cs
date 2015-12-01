@@ -16,20 +16,20 @@ namespace VendingMachineView
     /// </summary>
     public partial class CoinsPileInfoView : UserControl
     {
-        private CoinsPile _pile;
+        private CoinsPileViewItem _pile;
 
         public CoinsPileInfoView()
         {
             InitializeComponent();
         }
 
-        public void Setup(CoinsPile pile)
+        public void Setup(CoinsPileViewItem pile)
         {
             this._pile = pile;
-            this._nominal.Text = this._pile.Nominal.ToString();
+            this._nominal.Text = this._pile.NominalStr;
             this.UpdateView();
 
-            this._pile.CountChanged += _pile_CountChanged;
+            this._pile.Source.CountChanged += _pile_CountChanged;
         }
 
         void _pile_CountChanged(object sender, EventArgs e)
@@ -39,7 +39,7 @@ namespace VendingMachineView
 
         private void UpdateView()
         {
-            this._count.Text = this._pile.Count.ToString();
+            this._count.Text = this._pile.CountStr;
         }
 
         /// <summary> 
@@ -52,7 +52,7 @@ namespace VendingMachineView
             {
                 if(this._pile != null)
                 {
-                    this._pile.CountChanged -= _pile_CountChanged;
+                    this._pile.Source.CountChanged -= _pile_CountChanged;
                     this._pile = null;
                 }
             }

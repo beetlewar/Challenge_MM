@@ -17,23 +17,23 @@ namespace VendingMachineView
     public partial class DrinkView : UserControl
     {
         public event EventHandler<DrinkIdEventArgs> BuyClicked;
-        private IDrink _drink;
+        private DrinkViewItem _drink;
 
         public DrinkView()
         {
             InitializeComponent();
         }
 
-        public void Setup(IDrink drink)
+        public void Setup(DrinkViewItem drink)
         {
             this._drink = drink;
 
-            this._groupBoxName.Text = drink.Id.ToString();
-            this._buttonBuy.Text = drink.Cost.ToString();
+            this._groupBoxName.Text = drink.DisplayName;
+            this._buttonBuy.Text = drink.CostStr;
 
             this.UpdateView();
 
-            this._drink.CountChanged += _drink_CountChanged;
+            this._drink.Source.CountChanged += _drink_CountChanged;
         }
 
         void _drink_CountChanged(object sender, EventArgs e)
@@ -43,7 +43,7 @@ namespace VendingMachineView
 
         private void UpdateView()
         {
-            this._textBoxCount.Text = this._drink.Count.ToString();
+            this._textBoxCount.Text = this._drink.CountStr;
         }
 
         private void _buttonSize_Click(object sender, EventArgs e)
@@ -51,7 +51,7 @@ namespace VendingMachineView
             var h = this.BuyClicked;
             if( h != null )
             {
-                h(this, new DrinkIdEventArgs(this._drink.Id));
+                h(this, new DrinkIdEventArgs(this._drink.Source.Id));
             }
         }
 
@@ -65,7 +65,7 @@ namespace VendingMachineView
             {
                 if(this._drink != null)
                 {
-                    this._drink.CountChanged -= _drink_CountChanged;
+                    this._drink.Source.CountChanged -= _drink_CountChanged;
                 }
             }
             if (disposing && (components != null))
