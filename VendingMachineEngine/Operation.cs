@@ -9,7 +9,7 @@ namespace VendingMachineEngine
     /// <summary>
     /// Управляет переводом денег с одного кошелька на другой, выполняя операции по вносу денег, сдаче и приготовлению напитка
     /// </summary>
-    public class Operation
+    public class Operation : IOperation
     {
         /// <summary>
         /// Кошелек пользователя
