@@ -8,7 +8,6 @@ using VendingMachineEngine;
 namespace VendingMachineView
 {
     public class CookPresenter : 
-        APresenter,
         IDisposable
     {
         public IOperation Operation { get; private set; }
@@ -16,9 +15,7 @@ namespace VendingMachineView
 
         public CookPresenter(
             IOperation operation,
-            ICookView view,
-            IMessagePresenter msgPresenter) :
-            base(msgPresenter)
+            ICookView view)
         {
             if(operation == null)
             {
@@ -37,11 +34,8 @@ namespace VendingMachineView
 
         void View_DrinkClicked(object sender, DrinkIdEventArgs e)
         {
-            base.DoSafeAction(() =>
-                {
-                    this.Operation.Buy(e.DrinkId);
-                    base.ShowMessage(string.Format("Вы купили {0}", e.DrinkId));
-                });
+            this.Operation.Buy(e.DrinkId);
+            MessageBoxPresenter.ShowMessage(string.Format("Вы купили {0}", e.DrinkId));
         }
 
         public void Dispose()

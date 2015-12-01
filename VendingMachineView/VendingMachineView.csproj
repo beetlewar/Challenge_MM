@@ -41,7 +41,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APresenter.cs" />
     <Compile Include="CoinsPileEventArgs.cs" />
     <Compile Include="CoinsPileButtonView.cs">
       <SubType>UserControl</SubType>
@@ -70,7 +69,6 @@
       <DependentUpon>DrinkView.cs</DependentUpon>
     </Compile>
     <Compile Include="ICookView.cs" />
-    <Compile Include="IMessagePresenter.cs" />
     <Compile Include="IOperationView.cs" />
     <Compile Include="MessageBoxPresenter.cs" />
     <Compile Include="OperationPresenter.cs" />

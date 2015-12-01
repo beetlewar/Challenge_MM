@@ -8,7 +8,6 @@ using VendingMachineEngine;
 namespace VendingMachineView
 {
     public class OperationPresenter : 
-        APresenter,
         IDisposable
     {
         public IOperationView View { get; private set; }
@@ -16,9 +15,7 @@ namespace VendingMachineView
 
         public OperationPresenter(
             IOperation operarion,
-            IOperationView view,
-            IMessagePresenter msgPresenter) :
-            base(msgPresenter)
+            IOperationView view)
         {
             if (view == null)
             {
@@ -39,17 +36,17 @@ namespace VendingMachineView
 
         void View_MoneyBackClicked(object sender, EventArgs e)
         {
-            base.DoSafeAction(() => this.Operation.MoneyBack());
+            this.Operation.MoneyBack();
         }
 
         void Operation_BalanceChanged(object sender, BalanceEventArgs e)
         {
-            base.DoSafeAction(() => this.View.SetBalance(e.Balance));
+            this.View.SetBalance(e.Balance);
         }
 
         void View_PileClicked(object sender, CoinsPileEventArgs e)
         {
-            base.DoSafeAction(() => this.Operation.Deposit(e.Pile.Nominal, 1));
+            this.Operation.Deposit(e.Pile.Nominal, 1);
         }
 
         public void Dispose()

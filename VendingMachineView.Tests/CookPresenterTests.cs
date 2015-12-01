@@ -15,40 +15,13 @@ namespace VendingMachineView.Tests
         [Test]
         public void Ctor_NullOperation_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new CookPresenter(null, MockRepository.GenerateStub<ICookView>(), MockRepository.GenerateStub<IMessagePresenter>()));
+            Assert.Throws<ArgumentNullException>(() => new CookPresenter(null, MockRepository.GenerateStub<ICookView>()));
         }
 
         [Test]
         public void Ctor_NullCookView_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new CookPresenter(MockRepository.GenerateStub<IOperation>(), null, MockRepository.GenerateStub<IMessagePresenter>()));
-        }
-
-        [Test]
-        public void Ctor_NullMessagePresenter_ThrowsArgumentNullException()
-        {
-            Assert.Throws<ArgumentNullException>(() => new CookPresenter(MockRepository.GenerateStub<IOperation>(), MockRepository.GenerateStub<ICookView>(), null));
-        }
-
-        [Test]
-        public void BuyDrinkClicked_OperationThrowsException_ShowsMessage()
-        {
-            var mock = MockRepository.GenerateMock<IMessagePresenter>();
-            mock.Expect(m => m.ShowMessage("cde"));
-
-            var oper = MockRepository.GenerateStub<IOperation>();
-            oper.Stub(m => m.Buy(null)).IgnoreArguments().Throw(new EngineOperationException("cde"));
-
-            var view = MockRepository.GenerateStub<ICookView>();
-
-            new CookPresenter(oper, view, mock);
-
-            view.Raise(
-                s => s.BuyDrinkClicked += null,
-                view,
-                new DrinkIdEventArgs(123));
-
-            mock.VerifyAllExpectations();
+            Assert.Throws<ArgumentNullException>(() => new CookPresenter(MockRepository.GenerateStub<IOperation>(), null));
         }
 
         [Test]
@@ -59,7 +32,7 @@ namespace VendingMachineView.Tests
 
             var stub = MockRepository.GenerateStub<ICookView>();
 
-            new CookPresenter(mock, stub, MockRepository.GenerateStub<IMessagePresenter>());
+            new CookPresenter(mock, stub);
 
             stub.Raise(
                 s => s.BuyDrinkClicked += null,

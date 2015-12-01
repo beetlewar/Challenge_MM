@@ -15,13 +15,13 @@ namespace VendingMachineView.Tests
         [Test]
         public void Ctor_NullOperationView_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new OperationPresenter(MockRepository.GenerateMock<IOperation>(), null, MockRepository.GenerateStrictMock<IMessagePresenter>()));
+            Assert.Throws<ArgumentNullException>(() => new OperationPresenter(MockRepository.GenerateMock<IOperation>(), null));
         }
 
         [Test]
         public void Ctor_NullOperation_ThrowsArgumentNullException()
         {
-            Assert.Throws<ArgumentNullException>(() => new OperationPresenter(null, MockRepository.GenerateMock<IOperationView>(), MockRepository.GenerateStrictMock<IMessagePresenter>()));
+            Assert.Throws<ArgumentNullException>(() => new OperationPresenter(null, MockRepository.GenerateMock<IOperationView>()));
         }
 
         [Test]
@@ -32,32 +32,11 @@ namespace VendingMachineView.Tests
 
             var stub = MockRepository.GenerateStub<IOperationView>();
 
-            new OperationPresenter(mock, stub, MockRepository.GenerateStrictMock<IMessagePresenter>());
+            new OperationPresenter(mock, stub);
 
             stub.Raise(
                 s=>s.PileClicked += null,
                 stub, 
-                new CoinsPileEventArgs(new CoinsPile(3, 12)));
-
-            mock.VerifyAllExpectations();
-        }
-
-        [Test]
-        public void PileClicked_OperationThrowsException_ShowsMessage()
-        {
-            var mock = MockRepository.GenerateMock<IMessagePresenter>();
-            mock.Expect(m => m.ShowMessage("abc"));
-
-            var oper = MockRepository.GenerateStub<IOperation>();
-            oper.Stub(m => m.Deposit(0, 0)).IgnoreArguments().Throw(new EngineOperationException("abc"));
-
-            var view = MockRepository.GenerateStub<IOperationView>();
-
-            new OperationPresenter(oper, view, mock);
-
-            view.Raise(
-                s => s.PileClicked += null,
-                view,
                 new CoinsPileEventArgs(new CoinsPile(3, 12)));
 
             mock.VerifyAllExpectations();
@@ -71,7 +50,7 @@ namespace VendingMachineView.Tests
 
             var stub = MockRepository.GenerateStub<IOperation>();
 
-            new OperationPresenter(stub, mock, MockRepository.GenerateStub<IMessagePresenter>());
+            new OperationPresenter(stub, mock);
 
             stub.Raise(
                 o => o.BalanceChanged += null,
@@ -89,7 +68,7 @@ namespace VendingMachineView.Tests
 
             var stub = MockRepository.GenerateStub<IOperationView>();
 
-            new OperationPresenter(mock, stub, MockRepository.GenerateStrictMock<IMessagePresenter>());
+            new OperationPresenter(mock, stub);
 
             stub.Raise(
                 s => s.MoneyBackClicked += null,

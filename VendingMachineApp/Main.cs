@@ -59,9 +59,8 @@ namespace VendingMachineApp
             this._cookView.Setup(cook);
 
             // инициализируем презентеры
-            var msgPresenter = new MessageBoxPresenter();
-            this._objectsToDispose.Add(new OperationPresenter(operation, this._operationView, msgPresenter));
-            this._objectsToDispose.Add(new CookPresenter(operation, this._cookView, msgPresenter));
+            this._objectsToDispose.Add(new OperationPresenter(operation, this._operationView));
+            this._objectsToDispose.Add(new CookPresenter(operation, this._cookView));
         }
 
         /// <summary>

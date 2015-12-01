@@ -7,12 +7,16 @@ using System.Windows.Forms;
 
 namespace VendingMachineView
 {
-    public class MessageBoxPresenter :
-        IMessagePresenter
+    public static class MessageBoxPresenter
     {
-        public void ShowMessage(string msg)
+        public static void ShowError(string err)
         {
-            MessageBox.Show(msg);
+            MessageBox.Show(err, "Ошибка", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        public static void ShowMessage(string msg)
+        {
+            MessageBox.Show(msg, "Сообщение", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

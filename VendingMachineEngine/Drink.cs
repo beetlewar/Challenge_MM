@@ -55,6 +55,10 @@ namespace VendingMachineEngine
             this.Id = id;
         }
 
+        /// <summary>
+        /// Готовит напиток. В результате успешного приготовления уменьшает число порций на 1.
+        /// В случае, если напитка не осталось, генерит EngineOperationException.
+        /// </summary>
         public void Make()
         {
             if (this.Count == 0)
