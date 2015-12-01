@@ -80,5 +80,23 @@ namespace VendingMachineView.Tests
 
             mock.VerifyAllExpectations();
         }
+
+        [Test]
+        public void MoneyBackClicked_MockOperation_CallsMoneyBack()
+        {
+            var mock = MockRepository.GenerateMock<IOperation>();
+            mock.Expect(m => m.MoneyBack());
+
+            var stub = MockRepository.GenerateStub<IOperationView>();
+
+            new OperationPresenter(mock, stub, MockRepository.GenerateStrictMock<IMessagePresenter>());
+
+            stub.Raise(
+                s => s.MoneyBackClicked += null,
+                stub,
+                new CoinsPileEventArgs(new CoinsPile(3, 12)));
+
+            mock.VerifyAllExpectations();
+        }
     }
 }

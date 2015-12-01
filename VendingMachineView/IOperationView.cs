@@ -9,6 +9,7 @@ namespace VendingMachineView
     public interface IOperationView
     {
         event EventHandler<CoinsPileEventArgs> PileClicked;
+        event EventHandler MoneyBackClicked;
 
         void SetBalance(uint balance);
     }

@@ -1,6 +1,6 @@
 ﻿namespace VendingMachineView
 {
-    partial class CoinsPileView
+    partial class CoinsPileButtonView
     {
         /// <summary> 
         /// Required designer variable.

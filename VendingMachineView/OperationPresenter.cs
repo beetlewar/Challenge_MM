@@ -33,7 +33,13 @@ namespace VendingMachineView
             this.Operation = operarion;
 
             this.View.PileClicked += View_PileClicked;
+            this.View.MoneyBackClicked += View_MoneyBackClicked;
             this.Operation.BalanceChanged += Operation_BalanceChanged;
+        }
+
+        void View_MoneyBackClicked(object sender, EventArgs e)
+        {
+            base.DoSafeAction(() => this.Operation.MoneyBack());
         }
 
         void Operation_BalanceChanged(object sender, BalanceEventArgs e)
@@ -49,6 +55,7 @@ namespace VendingMachineView
         public void Dispose()
         {
             this.View.PileClicked -= View_PileClicked;
+            this.View.MoneyBackClicked -= View_MoneyBackClicked;
             this.Operation.BalanceChanged -= Operation_BalanceChanged;
             this.Operation = null;
         }

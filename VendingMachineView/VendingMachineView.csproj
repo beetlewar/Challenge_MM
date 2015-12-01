@@ -43,11 +43,17 @@
   <ItemGroup>
     <Compile Include="APresenter.cs" />
     <Compile Include="CoinsPileEventArgs.cs" />
-    <Compile Include="CoinsPileView.cs">
+    <Compile Include="CoinsPileButtonView.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="CoinsPileView.Designer.cs">
-      <DependentUpon>CoinsPileView.cs</DependentUpon>
+    <Compile Include="CoinsPileButtonView.Designer.cs">
+      <DependentUpon>CoinsPileButtonView.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CoinsPileInfoView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="CoinsPileInfoView.Designer.cs">
+      <DependentUpon>CoinsPileInfoView.cs</DependentUpon>
     </Compile>
     <Compile Include="IMessagePresenter.cs" />
     <Compile Include="IOperationView.cs" />
@@ -60,6 +66,12 @@
       <DependentUpon>OperationVIew.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WalletView.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="WalletView.Designer.cs">
+      <DependentUpon>WalletView.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VendingMachineEngine\VendingMachineEngine.csproj">
@@ -68,11 +80,17 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="CoinsPileView.resx">
-      <DependentUpon>CoinsPileView.cs</DependentUpon>
+    <EmbeddedResource Include="CoinsPileButtonView.resx">
+      <DependentUpon>CoinsPileButtonView.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CoinsPileInfoView.resx">
+      <DependentUpon>CoinsPileInfoView.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="OperationVIew.resx">
       <DependentUpon>OperationVIew.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="WalletView.resx">
+      <DependentUpon>WalletView.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -8,6 +8,7 @@ namespace VendingMachineEngine
 {
     public interface IWallet
     {
+        CoinsPile[] Piles { get; }
         void AddCoins(uint nominal, uint count);
         void SubstructCoins(uint nominal, uint count);
 

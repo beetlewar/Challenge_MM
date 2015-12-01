@@ -52,6 +52,8 @@ namespace VendingMachineApp
 
             // инициализируем вьюхи
             this._viewOperation.Setup(userCoinPiles);
+            this._userWalletView.Setup(userCoinPiles);
+            this._machineWalletView.Setup(machineCoinPiles);
 
             // инициализируем презентеры
             var msgPresenter = new MessageBoxPresenter();

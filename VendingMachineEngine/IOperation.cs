@@ -13,5 +13,7 @@ namespace VendingMachineEngine
         uint Balance { get; }
 
         void Deposit(uint nominal, uint count);
+
+        void MoneyBack();
     }
 }

@@ -24,7 +24,7 @@ namespace VendingMachineView
         {
             foreach(var pile in userPiles)
             {
-                var view = new CoinsPileView();
+                var view = new CoinsPileButtonView();
                 view.Setup(pile);
                 view.PileClicked += this.FirePileClicked;
                 this._panel.Controls.Add(view);
@@ -34,6 +34,7 @@ namespace VendingMachineView
         #region IOperationView
 
         public event EventHandler<CoinsPileEventArgs> PileClicked;
+        public event EventHandler MoneyBackClicked;
 
         private void FirePileClicked(object sender, CoinsPileEventArgs e)
         {
@@ -44,10 +45,18 @@ namespace VendingMachineView
             }
         }
 
-#warning реализовать
+        private void _buttobMoneyBack_Click(object sender, EventArgs e)
+        {
+            var h = this.MoneyBackClicked;
+            if( h != null )
+            {
+                h(this, EventArgs.Empty);
+            }
+        }
+
         public void SetBalance(uint balance)
         {
-            this._balance.Value = balance;
+            this._balance.Text = balance.ToString();
         }
 
         #endregion

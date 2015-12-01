@@ -11,11 +11,14 @@ using VendingMachineEngine;
 
 namespace VendingMachineView
 {
-    public partial class CoinsPileView : UserControl
+    /// <summary>
+    /// Представляет кнопку монеты, имитирующую внесение пользователем монеты
+    /// </summary>
+    public partial class CoinsPileButtonView : UserControl
     {
         public event EventHandler<CoinsPileEventArgs> PileClicked;
 
-        public CoinsPileView()
+        public CoinsPileButtonView()
         {
             InitializeComponent();
         }

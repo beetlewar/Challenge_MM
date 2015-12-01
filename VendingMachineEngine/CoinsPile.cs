@@ -11,6 +11,10 @@ namespace VendingMachineEngine
     /// </summary>
     public class CoinsPile
     {
+        public event EventHandler CountChanged;
+
+        private uint _count;
+
         /// <summary>
         /// Номинал монеты
         /// </summary>
@@ -19,7 +23,22 @@ namespace VendingMachineEngine
         /// <summary>
         /// Количество монет в стопке
         /// </summary>
-        public uint Count { get; internal set; }
+        public uint Count
+        {
+            get { return this._count; }
+            internal set
+            {
+                if(this._count != value)
+                {
+                    this._count = value;
+                    var h = this.CountChanged;
+                    if(  h != null )
+                    {
+                        h(this, EventArgs.Empty);
+                    }
+                }
+            }
+        }
 
         public CoinsPile(uint nominal) :
             this(nominal, 0)
