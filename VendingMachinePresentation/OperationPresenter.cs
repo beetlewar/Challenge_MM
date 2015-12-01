@@ -33,6 +33,8 @@ namespace VendingMachinePresentation
             this.View.PileClicked += View_PileClicked;
             this.View.MoneyBackClicked += View_MoneyBackClicked;
             this.Operation.BalanceChanged += Operation_BalanceChanged;
+
+            this.View.SetBalance(operarion.Balance);
         }
 
         void View_MoneyBackClicked(object sender, EventArgs e)

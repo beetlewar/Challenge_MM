@@ -28,7 +28,7 @@ namespace VendingMachineView
         public void Setup(CoinsPileViewItem pile)
         {
             this._pile = pile;
-            this._button.Text = this._pile.NominalStr;
+            this._button.Text = string.Format("Внести\n{0}", this._pile.NominalStr);
         }
 
         private void _button_Click(object sender, EventArgs e)

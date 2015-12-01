@@ -18,9 +18,9 @@
             this._groupBoxName = new System.Windows.Forms.GroupBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.label1 = new System.Windows.Forms.Label();
+            this._buttonBuy = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this._textBoxCount = new System.Windows.Forms.TextBox();
-            this._buttonBuy = new System.Windows.Forms.Button();
             this._groupBoxName.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
@@ -63,9 +63,19 @@
             this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
             this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(108, 13);
+            this.label1.Size = new System.Drawing.Size(49, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Количество порций:";
+            this.label1.Text = "Остаток";
+            // 
+            // _buttonBuy
+            // 
+            this._buttonBuy.Location = new System.Drawing.Point(51, 42);
+            this._buttonBuy.Name = "_buttonBuy";
+            this._buttonBuy.Size = new System.Drawing.Size(82, 75);
+            this._buttonBuy.TabIndex = 3;
+            this._buttonBuy.Text = "button1";
+            this._buttonBuy.UseVisualStyleBackColor = true;
+            this._buttonBuy.Click += new System.EventHandler(this._buttonSize_Click);
             // 
             // label2
             // 
@@ -83,18 +93,9 @@
             this._textBoxCount.Dock = System.Windows.Forms.DockStyle.Fill;
             this._textBoxCount.Location = new System.Drawing.Point(3, 16);
             this._textBoxCount.Name = "_textBoxCount";
+            this._textBoxCount.ReadOnly = true;
             this._textBoxCount.Size = new System.Drawing.Size(131, 20);
             this._textBoxCount.TabIndex = 2;
-            // 
-            // _buttonBuy
-            // 
-            this._buttonBuy.Location = new System.Drawing.Point(51, 42);
-            this._buttonBuy.Name = "_buttonBuy";
-            this._buttonBuy.Size = new System.Drawing.Size(82, 75);
-            this._buttonBuy.TabIndex = 3;
-            this._buttonBuy.Text = "button1";
-            this._buttonBuy.UseVisualStyleBackColor = true;
-            this._buttonBuy.Click += new System.EventHandler(this._buttonSize_Click);
             // 
             // DrinkView
             // 

@@ -56,7 +56,7 @@ namespace VendingMachineView
 
         public void SetBalance(uint balance)
         {
-            this._balance.Text = balance.ToString();
+            this._balance.Text = string.Format("{0} руб", balance);
         }
 
         #endregion

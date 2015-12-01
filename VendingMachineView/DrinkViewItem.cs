@@ -18,7 +18,7 @@ namespace VendingMachineView
 
         public string CountStr
         {
-            get { return this.Source.Count.ToString(); }
+            get { return string.Format("{0} порций", this.Source.Count.ToString()); }
         }
 
         public string CostStr

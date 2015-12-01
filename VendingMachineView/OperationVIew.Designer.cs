@@ -71,7 +71,7 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(3, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(44, 13);
+            this.label1.Size = new System.Drawing.Size(98, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Внесенная сумма";
             // 
@@ -89,9 +89,10 @@
             // _balance
             // 
             this._balance.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this._balance.Location = new System.Drawing.Point(53, 30);
+            this._balance.Location = new System.Drawing.Point(107, 30);
             this._balance.Name = "_balance";
-            this._balance.Size = new System.Drawing.Size(175, 20);
+            this._balance.ReadOnly = true;
+            this._balance.Size = new System.Drawing.Size(121, 20);
             this._balance.TabIndex = 3;
             // 
             // OperationVIew

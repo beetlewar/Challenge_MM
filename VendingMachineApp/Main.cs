@@ -36,8 +36,8 @@ namespace VendingMachineApp
             var machineCoinPiles = new[]
             {
                 new CoinsPile(1, 100),
-                new CoinsPile(2, 300),
-                new CoinsPile(5, 200),
+                new CoinsPile(2, 100),
+                new CoinsPile(5, 100),
                 new CoinsPile(10, 100),
             };
 
