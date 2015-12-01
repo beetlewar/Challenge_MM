@@ -22,11 +22,16 @@ namespace VendingMachineEngine
         public IWallet MachineWallet { get; private set; }
 
         /// <summary>
+        /// Ссылка на виртуальынй повар
+        /// </summary>
+        public ICook Cook { get; private set; }
+
+        /// <summary>
         /// Остаток денег
         /// </summary>
         public uint Balance { get; internal set; }
 
-        public Operation(IWallet userWallet, IWallet machineWallet)
+        public Operation(IWallet userWallet, IWallet machineWallet, ICook cook)
         {
             if(userWallet == null)
             {
@@ -36,9 +41,14 @@ namespace VendingMachineEngine
             {
                 throw new ArgumentNullException();
             }
+            if(cook == null)
+            {
+                throw new ArgumentNullException();
+            }
 
             this.UserWallet = userWallet;
             this.MachineWallet = machineWallet;
+            this.Cook = cook;
         }
 
         /// <summary>
@@ -64,6 +74,21 @@ namespace VendingMachineEngine
                 this.UserWallet.AddCoins(pile.Nominal, pile.Count);
             }
             this.Balance = 0;
+        }
+
+        /// <summary>
+        /// Осуществляет покупку напитка, при этом с баланса списываются деньги и начинает готовиться напиток.
+        /// </summary>
+        /// <param name="drinkId">Идентификатор приготавливаемого напитка</param>
+        public void Buy(object drinkId)
+        {
+            var cost = this.Cook.GetCost(drinkId);
+            if(cost > this.Balance)
+            {
+                throw new EngineOperationException("Недостаточно средств");
+            }
+            this.Cook.Make(drinkId);
+            this.Balance -= cost;
         }
     }
 }
