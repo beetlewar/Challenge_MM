@@ -26,7 +26,7 @@ namespace VendingMachineView
         public void Setup(CoinsPileViewItem pile)
         {
             this._pile = pile;
-            this._nominal.Text = this._pile.NominalStr;
+            this._nominal.Text = string.Format("{0}", this._pile.NominalStr);
             this.UpdateView();
 
             this._pile.Source.CountChanged += _pile_CountChanged;

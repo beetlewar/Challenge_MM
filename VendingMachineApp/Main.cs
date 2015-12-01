@@ -84,5 +84,10 @@ namespace VendingMachineApp
             }
             base.Dispose(disposing);
         }
+
+        private void Main_Resize(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -31,7 +31,7 @@
             this._groupBoxName.Dock = System.Windows.Forms.DockStyle.Fill;
             this._groupBoxName.Location = new System.Drawing.Point(0, 0);
             this._groupBoxName.Name = "_groupBoxName";
-            this._groupBoxName.Size = new System.Drawing.Size(149, 128);
+            this._groupBoxName.Size = new System.Drawing.Size(143, 142);
             this._groupBoxName.TabIndex = 0;
             this._groupBoxName.TabStop = false;
             this._groupBoxName.Text = "groupBox1";
@@ -42,51 +42,53 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle());
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.label1, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this._textBoxCount, 1, 0);
-            this.tableLayoutPanel1.Controls.Add(this._buttonBuy, 1, 1);
+            this.tableLayoutPanel1.Controls.Add(this._buttonBuy, 1, 2);
+            this.tableLayoutPanel1.Controls.Add(this.label2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this._textBoxCount, 0, 1);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(3, 16);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowCount = 4;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(143, 109);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle());
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(137, 123);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label1
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Left;
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(3, 6);
+            this.tableLayoutPanel1.SetColumnSpan(this.label1, 2);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(49, 13);
+            this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Количество порций";
+            this.label1.Text = "Количество порций:";
             // 
             // label2
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Right;
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(19, 60);
+            this.label2.Location = new System.Drawing.Point(3, 73);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(33, 13);
+            this.label2.Size = new System.Drawing.Size(42, 13);
             this.label2.TabIndex = 1;
-            this.label2.Text = "Цена";
+            this.label2.Text = "Купить";
             // 
             // _textBoxCount
             // 
+            this.tableLayoutPanel1.SetColumnSpan(this._textBoxCount, 2);
             this._textBoxCount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._textBoxCount.Location = new System.Drawing.Point(58, 3);
+            this._textBoxCount.Location = new System.Drawing.Point(3, 16);
             this._textBoxCount.Name = "_textBoxCount";
-            this._textBoxCount.Size = new System.Drawing.Size(82, 20);
+            this._textBoxCount.Size = new System.Drawing.Size(131, 20);
             this._textBoxCount.TabIndex = 2;
             // 
             // _buttonBuy
             // 
-            this._buttonBuy.Dock = System.Windows.Forms.DockStyle.Top;
-            this._buttonBuy.Location = new System.Drawing.Point(58, 29);
+            this._buttonBuy.Location = new System.Drawing.Point(51, 42);
             this._buttonBuy.Name = "_buttonBuy";
             this._buttonBuy.Size = new System.Drawing.Size(82, 75);
             this._buttonBuy.TabIndex = 3;
@@ -100,7 +102,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this._groupBoxName);
             this.Name = "DrinkView";
-            this.Size = new System.Drawing.Size(149, 128);
+            this.Size = new System.Drawing.Size(143, 142);
             this._groupBoxName.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();

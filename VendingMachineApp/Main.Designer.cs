@@ -16,14 +16,14 @@
         private void InitializeComponent()
         {
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this._operationView = new VendingMachineView.OperationVIew();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this._userWalletView = new VendingMachineView.WalletView();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this._machineWalletView = new VendingMachineView.WalletView();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this._operationView = new VendingMachineView.OperationVIew();
+            this._userWalletView = new VendingMachineView.WalletView();
             this._cookView = new VendingMachineView.CookView();
+            this._machineWalletView = new VendingMachineView.WalletView();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -35,77 +35,53 @@
             // 
             this.groupBox1.Controls.Add(this._operationView);
             this.groupBox1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox1.Location = new System.Drawing.Point(395, 3);
+            this.groupBox1.Location = new System.Drawing.Point(329, 3);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(386, 305);
+            this.groupBox1.Size = new System.Drawing.Size(372, 204);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Монеты";
-            // 
-            // _operationView
-            // 
-            this._operationView.AutoSize = true;
-            this._operationView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._operationView.Location = new System.Drawing.Point(3, 16);
-            this._operationView.Name = "_operationView";
-            this._operationView.Size = new System.Drawing.Size(380, 286);
-            this._operationView.TabIndex = 0;
+            this.groupBox1.Text = "Монетоприемник";
             // 
             // tableLayoutPanel1
             // 
             this.tableLayoutPanel1.ColumnCount = 2;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 46.34503F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 53.65497F));
             this.tableLayoutPanel1.Controls.Add(this.groupBox1, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.groupBox2, 1, 1);
-            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.groupBox4, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.groupBox3, 1, 2);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 55.43672F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 44.56328F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(784, 561);
+            this.tableLayoutPanel1.RowCount = 3;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 37.5F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 31.25F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(704, 561);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
             // groupBox2
             // 
             this.groupBox2.Controls.Add(this._userWalletView);
             this.groupBox2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox2.Location = new System.Drawing.Point(395, 314);
+            this.groupBox2.Location = new System.Drawing.Point(329, 213);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(386, 244);
+            this.groupBox2.Size = new System.Drawing.Size(372, 169);
             this.groupBox2.TabIndex = 2;
             this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Пользовательсккий";
-            // 
-            // _userWalletView
-            // 
-            this._userWalletView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._userWalletView.Location = new System.Drawing.Point(3, 16);
-            this._userWalletView.Name = "_userWalletView";
-            this._userWalletView.Size = new System.Drawing.Size(380, 225);
-            this._userWalletView.TabIndex = 0;
+            this.groupBox2.Text = "Кошелек пользователя";
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this._machineWalletView);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.groupBox3.Location = new System.Drawing.Point(3, 314);
+            this.groupBox3.Location = new System.Drawing.Point(329, 388);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(386, 244);
+            this.groupBox3.Size = new System.Drawing.Size(372, 170);
             this.groupBox3.TabIndex = 3;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "Машины";
-            // 
-            // _machineWalletView
-            // 
-            this._machineWalletView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this._machineWalletView.Location = new System.Drawing.Point(3, 16);
-            this._machineWalletView.Name = "_machineWalletView";
-            this._machineWalletView.Size = new System.Drawing.Size(380, 225);
-            this._machineWalletView.TabIndex = 0;
+            this.groupBox3.Text = "Кошелек машины";
             // 
             // groupBox4
             // 
@@ -113,30 +89,57 @@
             this.groupBox4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox4.Location = new System.Drawing.Point(3, 3);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(386, 305);
+            this.tableLayoutPanel1.SetRowSpan(this.groupBox4, 3);
+            this.groupBox4.Size = new System.Drawing.Size(320, 555);
             this.groupBox4.TabIndex = 4;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Ассортимент";
+            // 
+            // _operationView
+            // 
+            this._operationView.AutoSize = true;
+            this._operationView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._operationView.Location = new System.Drawing.Point(3, 16);
+            this._operationView.Name = "_operationView";
+            this._operationView.Size = new System.Drawing.Size(366, 185);
+            this._operationView.TabIndex = 0;
+            // 
+            // _userWalletView
+            // 
+            this._userWalletView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._userWalletView.Location = new System.Drawing.Point(3, 16);
+            this._userWalletView.Name = "_userWalletView";
+            this._userWalletView.Size = new System.Drawing.Size(366, 150);
+            this._userWalletView.TabIndex = 0;
             // 
             // _cookView
             // 
             this._cookView.Dock = System.Windows.Forms.DockStyle.Fill;
             this._cookView.Location = new System.Drawing.Point(3, 16);
             this._cookView.Name = "_cookView";
-            this._cookView.Size = new System.Drawing.Size(380, 286);
+            this._cookView.Size = new System.Drawing.Size(314, 536);
             this._cookView.TabIndex = 0;
+            // 
+            // _machineWalletView
+            // 
+            this._machineWalletView.Dock = System.Windows.Forms.DockStyle.Fill;
+            this._machineWalletView.Location = new System.Drawing.Point(3, 16);
+            this._machineWalletView.Name = "_machineWalletView";
+            this._machineWalletView.Size = new System.Drawing.Size(366, 151);
+            this._machineWalletView.TabIndex = 0;
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 561);
+            this.ClientSize = new System.Drawing.Size(704, 561);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(800, 500);
+            this.MinimumSize = new System.Drawing.Size(720, 600);
             this.Name = "Main";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Виртуальный автомат приготовления напитков";
             this.Load += new System.EventHandler(this.Main_Load);
+            this.Resize += new System.EventHandler(this.Main_Resize);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
