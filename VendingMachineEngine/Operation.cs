@@ -11,6 +11,13 @@ namespace VendingMachineEngine
     /// </summary>
     public class Operation : IOperation
     {
+        private uint _balance;
+
+        /// <summary>
+        /// Событие, возникающее при изменении баланса
+        /// </summary>
+        public event EventHandler<BalanceEventArgs> BalanceChanged;
+
         /// <summary>
         /// Кошелек пользователя
         /// </summary>
@@ -29,7 +36,22 @@ namespace VendingMachineEngine
         /// <summary>
         /// Остаток денег
         /// </summary>
-        public uint Balance { get; internal set; }
+        public uint Balance
+        {
+            get { return this._balance; }
+            internal set
+            {
+                if(this._balance != value)
+                {
+                    this._balance = value;
+                    var h = this.BalanceChanged;
+                    if( h != null)
+                    {
+                        h(this, new BalanceEventArgs(value));
+                    }
+                }
+            }
+        }
 
         public Operation(IWallet userWallet, IWallet machineWallet, ICook cook)
         {

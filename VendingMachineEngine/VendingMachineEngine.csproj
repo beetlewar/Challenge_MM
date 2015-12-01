@@ -39,6 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BalanceEventArgs.cs" />
     <Compile Include="CoinsPile.cs" />
     <Compile Include="Cook.cs" />
     <Compile Include="Drink.cs" />

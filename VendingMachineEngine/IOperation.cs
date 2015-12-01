@@ -8,6 +8,10 @@ namespace VendingMachineEngine
 {
     public interface IOperation
     {
+        event EventHandler<BalanceEventArgs> BalanceChanged;
+
+        uint Balance { get; }
+
         void Deposit(uint nominal, uint count);
     }
 }

@@ -4,15 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{6A700004-7B3A-45C6-8BAF-73552174EC2C}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{1F77EA83-F7D5-4F33-B3D2-46972D9ADA29}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>VendingMachineView</RootNamespace>
-    <AssemblyName>VendingMachineView</AssemblyName>
+    <RootNamespace>VendingMachineApp</RootNamespace>
+    <AssemblyName>VendingMachineApp</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +23,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -32,48 +34,58 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="APresenter.cs" />
-    <Compile Include="CoinsPileEventArgs.cs" />
-    <Compile Include="CoinsPileView.cs">
-      <SubType>UserControl</SubType>
+    <Compile Include="Main.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CoinsPileView.Designer.cs">
-      <DependentUpon>CoinsPileView.cs</DependentUpon>
+    <Compile Include="Main.Designer.cs">
+      <DependentUpon>Main.cs</DependentUpon>
     </Compile>
-    <Compile Include="IMessagePresenter.cs" />
-    <Compile Include="IOperationView.cs" />
-    <Compile Include="MessageBoxPresenter.cs" />
-    <Compile Include="OperationPresenter.cs" />
-    <Compile Include="OperationVIew.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="OperationVIew.Designer.cs">
-      <DependentUpon>OperationVIew.cs</DependentUpon>
-    </Compile>
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Main.resx">
+      <DependentUpon>Main.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\VendingMachineEngine\VendingMachineEngine.csproj">
       <Project>{1f873ed4-944d-4e81-a295-199aede01a8d}</Project>
       <Name>VendingMachineEngine</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="CoinsPileView.resx">
-      <DependentUpon>CoinsPileView.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OperationVIew.resx">
-      <DependentUpon>OperationVIew.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\VendingMachineView\VendingMachineView.csproj">
+      <Project>{6a700004-7b3a-45c6-8baf-73552174ec2c}</Project>
+      <Name>VendingMachineView</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
